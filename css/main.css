@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/*Custom Properties
+  
+:root {
+    --leading: 2em;
+}
+
+*/
+
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+.hero-bg{
+    background: #307d99 url('../images/bg.jpg');
+    background-position: 35%  68%;
+    color: white;
+    text-align: center;
+    padding-bottom: 4em;
+}
+
+header {
+    padding: 1em 0;
+}
+
+.hero-bg a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+
+}
+
+section {
+    margin: 0 1em;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin:2.5em 0 1.2em;
+}
+
+h1 span {
+    text-transform: uppercase;
+    display: block;
+    font-size: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+h1 span::before {
+    content: '';
+    position: absolute;
+    width: 5em;
+    height: .4em;
+    background: #00bfff;
+    bottom: 0;
+    z-index: -1;
+    margin-left: -.3em;
+    
+
+}
+
+.hero-bg p {
+    font-weight: bold;
+    margin: 0 1em 3em;
+}
+
+.form-container{
+    background: white;
+    margin: 2em -1em 0;
+    padding: 2em ;
+}
+
+label {
+    color: #2d7d98;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 1em;
+    font-size: 1.2rem;
+}
+
+input[type=text] {
+    border: 1px solid #707070;
+    width: 100%;
+    padding: 1em;
+    box-sizing: border-box;
+    border-radius:.5em;
+    margin-top: 1.2em;
+}
+
+.form-container p {
+    color: grey;
+    margin-bottom: 1.5em;
+    font-weight: normal;
+    font-size: 0.9em;
+    margin-top: 0.3em;
+}
+
+input[type="button"] {
+    background-color: #f89104;
+    border: none;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    padding: 1em 0;
+    border-radius: 0.5em;
+    font-size: 1.3rem;
+    cursor: pointer;
+
+}
+
+input[type=button]:hover {
+    background-color: #e98a04;  
+
+}
+
+.authentic {
+    margin: 0;
+    
+}
+
+.right-col {
+    text-align: center;
+    margin: 3em 1em;
+}
+
+h2 {
+    text-transform: uppercase;
+    position: relative;
+}
+
+h2::before{
+    content: '';
+    position: absolute;
+    background: #00bfff;
+    width: 9em;
+    height: .4em;
+    z-index: -1;
+    bottom: 0;
+    margin-left: -.3em;
+    border-radius: .1em;
+    
+    
+}
+
+img {
+    width: 100%;
+}
+
+p {
+    line-height: 2em;  /* or if you are using custom properties ->   line-height: var(--leading); */
+}
+
+
+/*overlay part needs to be done by jtml and css so that javascript can use it */
+
+.overlay{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background: rgba(0, 0,0,0.9);
+    z-index: 1;
+    place-content: center; /*we're doing this to display the searching now text in the center */
+    color: white;
+    /*display: grid;*//* place-content and display: grid work with each other */
+    display: none;/*we put display as none because we do not want to show searching now initially. It should only be shown when someine clicks find button */
+    opacity: 0;
+}
+
+/*This is a custom css class(not mentioned in html) */
+.animate-overlay{
+    animation: overlay 3s forwards;
+}
+
+/* media query can be used to get responsive design */
+@media(min-width: 730px){
+    section {
+        margin: 0 4em;
+    }
+    .form-container{       
+        margin: 2em -4em 0; /* -4em instead of -1 em cuz margin of section increased from 1em to 4em */
+      
+    }
+      
+}
+
+@media(min-width: 930px) {
+    .hero-bg{      
+        text-align: left;
+    }
+
+    .hero-bg p {
+        margin: 0 0 3em;
+    }
+
+    .hero-bg section {
+        width: 65%;
+    }
+     
+    .form-container {
+        margin: 2em 0 0;
+        border-radius: .5em;
+        box-shadow: 10px 10px 5px rgba(0, 0,0,0.3);
+    }
+
+    /* display: flex can be used for simple alignment and display: grid for bigger, larger elements */
+
+    form {
+        display: flex;
+    }   
+
+    .form-left {
+        width: 70%;
+    }
+
+    label {
+        margin: 0;
+    }
+    input[type="button"] {
+        height: min-content;
+        font-size: 1.1em;
+        margin-left: 1em;
+        margin-top: 2.2em;
+        width: 30%;
+        padding: .9em 0;
+        border-radius: .5em;
+    }
+
+    .hero-bg p {
+        margin-bottom: 0;
+    }
+
+
+    section.authentic {
+        display: grid;
+        grid-template-columns:  repeat(2,50%);
+        grid-template-areas: " bowl  content";
+    }
+
+    .right-col {
+        grid-area: content;
+        padding: 0 10%;
+        text-align: left;
+        align-self: center; /* This is a css grid property.
+        this means that it will be vertically aligned in the browser no matter how high the content gets */
+
+    }
+
+    img {
+        grid-area: bowl;
+    }
+
+    h2 {
+        margin: 0;
+    }
+
+}
+
+.top {
+    animation: fadeIn 2s forwards; /*forwards is written so that the fadeIn does not go in a loop */
+
+}
+
+/*to specify fadeIn*/
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-2em);/*start coming from 2em above the place it is shown. this is done to show it fades in from a height*/
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes overlay {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
