@@ -1,2 +1,2 @@
 # food
-responsive web 
+responsive web design - cover page
