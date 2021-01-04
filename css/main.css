@@ -8,6 +8,14 @@
 
 */
 
+::-webkit-scrollbar{
+    width:10px;
+    background-color: transparent ;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #8a552d;
+}
 
 body{
     font-family: 'Montserrat', sans-serif;
@@ -15,8 +23,8 @@ body{
 }
 
 .hero-bg{
-    background: #307d99 url('../images/bg.jpg');
-    background-position: 35%  68%;
+    background: #4f331d urL(../images/coffee.jpg);
+    background-position: 45%  50%;
     color: white;
     text-align: center;
     padding-bottom: 4em;
@@ -41,6 +49,7 @@ section {
 h1 {
     font-size: 2.5rem;
     margin:2.5em 0 1.2em;
+    color: white;
 }
 
 h1 span {
@@ -56,7 +65,7 @@ h1 span::before {
     position: absolute;
     width: 5em;
     height: .4em;
-    background: #00bfff;
+    background:  #cd8751;
     bottom: 0;
     z-index: -1;
     margin-left: -.3em;
@@ -76,7 +85,7 @@ h1 span::before {
 }
 
 label {
-    color: #2d7d98;
+    color: #8a552d;
     font-weight: bold;
     display: block;
     margin-bottom: 1em;
@@ -136,7 +145,7 @@ h2 {
 h2::before{
     content: '';
     position: absolute;
-    background: #00bfff;
+    background: #cd8751;
     width: 9em;
     height: .4em;
     z-index: -1;
